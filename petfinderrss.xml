@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.6" type="plugin" group="system" method="upgrade">
+	<name>plg_system_petfinderrss</name>
+	<author>AHeavyObject</author>
+	<creationDate>2021-06-17</creationDate>
+	<copyright>Copylet (є) 2021 Agiliway. All rights reversed.</copyright>
+	<license>http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL</license>
+	<authorEmail>vongruz@protonmail.com</authorEmail>
+	<version>1.0</version>
+	<description>PLG_SYSTEM_PETFINDERRSS_DESC</description>
+	<files>
+		<filename plugin="petfinderrss">petfinderrss.php</filename>
+		<folder>language</folder>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="description">
+				<field name="note" type="note" label="PLG_SYSTEM_PETFINDERRSS_API_KEYS_SCREENSHOT"/>
+			</fieldset>
+			<fieldset name="basic">
+				<field name="api_public_key" type="text" label="PLG_SYSTEM_PETFINDERRSS_API_PUBLIC_KEY" />
+				<field name="api_secret_key" type="text" label="PLG_SYSTEM_PETFINDERRSS_API_SECRET_KEY" />
+
+				<field
+					name="options"
+					type="subform"
+					label="PLG_SYSTEM_PETFINDERRSS_TEMPLATE"
+					layout="joomla.form.field.subform.repeatable-table"
+					icon="list"
+					multiple="true"
+					>
+					<form hidden="true" name="list_templates_modal" repeat="true">
+						<field
+							name="name"
+							type="text"
+							label="PLG_SYSTEM_PETFINDERRSS_TEMPLATE_NAME"
+							size="30"
+						/>
+
+						<field
+							name="value"
+							type="textarea"
+							label="PLG_SYSTEM_PETFINDERRSS_TEMPLATE_HTML"
+							filter="raw"
+						/>
+						<field name="image_size" type="list" default="" label="PLG_SYSTEM_PETFINDERRSS_TEMPLATE_IMAGE_SIZE" description="">
+							<option value="small">100</option>
+							<option value="medium">300</option>
+							<option value="large">600</option>
+							<option value="full">full</option>
+						  </field>
+					</form>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
